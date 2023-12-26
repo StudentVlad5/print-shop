@@ -20,9 +20,10 @@ const ShoppingList = () => {
 
   async function getItems() {
     const items = await fetch(
-      "http://localhost:2000/api/items?populate=image",
+      "http://localhost:1337/api/items?populate=image",
       { method: "GET" }
     );
+    console.log("items",items);
     const itemsJson = await items.json();
     dispatch(setItems(itemsJson.data));
   }
