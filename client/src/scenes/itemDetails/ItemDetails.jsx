@@ -71,13 +71,13 @@ const ItemDetails = () => {
             <Box>Prev Next</Box>
           </Box>
 
-          <Box m="65px 0 25px 0">
+          {/* <Box sx={{m:"65px 0 25px 0"}}>
             <Typography variant="h3">{item?.attributes?.name}</Typography>
             <Typography>${item?.attributes?.price}</Typography>
             <Typography sx={{ mt: "20px" }}>
-              {item?.attributes?.longDescription}
+              {item?.attributes?.longDescription[0]}
             </Typography>
-          </Box>
+          </Box> */}
 
           <Box display="flex" alignItems="center" minHeight="50px">
             <Box
@@ -127,7 +127,9 @@ const ItemDetails = () => {
       </Box>
       <Box display="flex" flexWrap="wrap" gap="15px">
         {value === "description" && (
-          <div>{item?.attributes?.longDescription}</div>
+          <div>
+            {item?.attributes.longDescription[0].children[0].text}
+            </div>
         )}
         {value === "reviews" && <div>reviews</div>}
       </Box>
@@ -144,8 +146,8 @@ const ItemDetails = () => {
           columnGap="1.33%"
           justifyContent="space-between"
         >
-          {items.slice(0, 4).map((item, i) => (
-            <Item key={`${item.name}-${i}`} item={item} />
+          {items.slice(0, 4).map((it, i) => (
+            <Item key={`${it?.id}-${i}`} item={it} />
           ))}
         </Box>
       </Box>

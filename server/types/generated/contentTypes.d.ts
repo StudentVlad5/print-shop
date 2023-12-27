@@ -368,6 +368,7 @@ export interface ApiItemItem extends Schema.CollectionType {
     singularName: 'item';
     pluralName: 'items';
     displayName: 'item';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -378,7 +379,7 @@ export interface ApiItemItem extends Schema.CollectionType {
     longDescription: Attribute.Blocks;
     price: Attribute.Decimal;
     image: Attribute.Media;
-    category: Attribute.Enumeration<['newArravals', 'bestSellers', 'topRated']>;
+    category: Attribute.Enumeration<['newArrivals', 'bestSellers', 'topRated']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
